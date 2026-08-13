@@ -74,8 +74,11 @@
             <div class="mt-2">
                 <h3>Expected Results & Impact</h3>
                 <ul class="bullet-list">
-                    <li><strong>Theoretical Impact:</strong> Expands AC theory by demonstrating that these microstructures impair both human and machine code comprehension.</li>
-                    <li><strong>Practical Impact:</strong> Guides the design of context-aware, AI-driven code review tools to help mitigate cognitive technical debt.</li>
+                    <li><strong>AC Identification:</strong> LLMs are expected to identify ACs, although their performance may contrast with traditional static analysis tools.</li>
+                    <li><strong>Debt Generation:</strong> When tasked with code optimization or verbosity reduction, LLMs will likely introduce new ACs, inadvertently prioritizing conciseness over readability.</li>
+                    <li><strong>Bug Prediction:</strong> Specific AC patterns are anticipated to act as reliable vectors for bug prediction, enabling LLMs to infer deeper logical vulnerabilities from these localized confusion hotspots.</li>
+                    <li><strong>Theoretical Impact:</strong> The findings will expand the theory of ACs into the AI domain, demonstrating that these microstructures transcend human cognitive limits and also impact machine comprehension.</li>
+                    <li><strong>Practical Impact:</strong> The resulting insights will provide foundations for enhanced, AI-driven code review tools, aiming to mitigate technical debt and secure critical software infrastructures before deployment.</li>
                 </ul>
             </div>
         </section>
@@ -85,23 +88,23 @@
             <div class="methodology-steps">
                 <div class="step">
                     <h4>1. Dataset Construction</h4>
-                    <p>C and Java snippets pre-analyzed by BOHR and AtomFinder.</p>
+                    <p>Curating datasets of C and Java code snippets with a high density of Atoms of Confusion (ACs), pre-detected by static analysis tools like BOHR and AtomFinder.</p>
                 </div>
                 <div class="step">
                     <h4>2. Prompt Engineering</h4>
-                    <p>Structured prompts tailored for models like GPT, Claude, and Gemini.</p>
+                    <p>Designing structured prompts for state-of-the-art LLMs (e.g., GPT, Claude, Gemini) to evaluate three core capabilities: direct AC identification, code refactoring, and logical bug inference.</p>
                 </div>
                 <div class="step">
                     <h4>3. Experimental Execution</h4>
-                    <p>Evaluate LLMs on direct AC classification and vulnerability prediction.</p>
+                    <p>Querying the selected models to classify code confusion levels, generate semantically equivalent clean code, and predict underlying logical vulnerabilities within the extracted hotspots.</p>
                 </div>
                 <div class="step">
                     <h4>4. Empirical Validation</h4>
-                    <p>Execution of micro-benchmarks on AI-refactored code to ensure semantic preservation.</p>
+                    <p>Evaluating the AI-refactored code through compilation checks and execution of micro-benchmarks to ensure that the removal of ACs preserves the original program semantics without degrading computational efficiency.</p>
                 </div>
                 <div class="step">
                     <h4>5. Statistical Analysis</h4>
-                    <p>Precision, recall, and hypothesis testing against static tool baselines.</p>
+                    <p>Applying metrics such as precision, recall, and hypothesis testing to compare the LLMs' detection and refactoring performance against traditional automated tools and manual analysis baselines.</p>
                 </div>
             </div>
         </section>
@@ -148,19 +151,35 @@
                     <li><strong>Adaptation for ACs:</strong> The resilient, checkpoint-based pipeline built for SATD classification will be directly adapted to query state-of-the-art LLMs on their ability to semantically identify, refactor, and analyze ACs across large datasets.</li>
                 </ul>
 
+                <img src="assets/1_satd_vs_nao_satd.png" alt="Detection Results" class="result-graph">
                 <img src="assets/3_categorias_satd_apenas.png" alt="LLM Classification Results" class="result-graph">
                 
                 <a href="https://github.com/httpaulie/Detecting_SATD_Java" class="btn-repo" target="_blank">View Detection Tool</a>
+            </div>
+        </section>
+
+        <section id="references" class="card">
+            <h2>References</h2>
+            <div class="references-list">
+                <p>
+                    <strong>[1]</strong> Abdelsalam et al. 2026. Are Humans and LLMs Confused by the Same Code? An Empirical Study on Fixation-Related Potentials and LLM Perplexity. In Proceedings of the International Conference on Software Engineering (ICSE). ACM.
+                </p>
+                <p class="mt-2">
+                    <strong>[2]</strong> Gopstein et al. 2017. Understanding misunderstandings in source code. In Proceedings of the 2017 11th Joint Meeting on Foundations of Software Engineering (Paderborn, Germany) (ESEC/FSE 2017). Association for Computing Machinery, New York, NY, USA, 129–139.
+                </p>
+                <p class="mt-2">
+                    <strong>[3]</strong> Xia et al. 2018. Measuring Program Comprehension: A Large-Scale Field Study with Professionals. IEEE Transactions on Software Engineering 44, 10 (2018), 951–976.
+                </p>
             </div>
         </section>
     </main>
 
     <footer class="footer">
         <div class="container">
-            <p><strong>Beyond Human Error</strong> | Poster Presentation at 6th LATAM School</p>
+            <p><strong>Beyond Human Error: Evaluating LLM Capabilities in Identifying and Refactoring Atoms of Confusion</strong> | Poster Presentation at 6th LATAM School - The Latin American School in Software Engineering. Co-located with CBSOFT, XVI Brazilian Conference on Software: Practice and Theory, September 8th to 11th | São Paulo/SP, Brazil</p>
             <p>
                 <a href="https://www.linkedin.com/in/paulo-guilherme-medeiros-marques/" target="_blank">LinkedIn</a> | 
-                <a href="http://lattes.cnpq.br/1199577576352623" target="_blank">Lattes CV</a> | 
+                <a href="http://lattes.cnpq.br/1199577576352623" target="_blank">Lattes</a> | 
                 <a href="mailto:pgmededeiros@gmail.com">Contact</a>
             </p>
         </div>

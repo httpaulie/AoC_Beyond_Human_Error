@@ -8,41 +8,57 @@
 </head>
 <body>
     <header class="header">
-        <div class="container header-content">
-            <div class="logos">
-                <!-- INSIRA O LINK DA LOGO DA UFC NO ATRIBUTO SRC ABAIXO -->
-                <img src="URL_DA_LOGO_UFC.png" alt="UFC Logo" class="institution-logo">
-            </div>
             <div class="title-area">
-                <h1>Beyond Human Error: Evaluating LLM Capabilities in Identifying and Refactoring Atoms of Confusion</h1>
-                <p class="authors">Paulo Guilherme Medeiros Marques | Advisor: Windson Viana de Carvalho</p>
+                <h1>Beyond Human Error</h1>
+                <h2>Evaluating LLM Capabilities in Identifying and Refactoring Atoms of Confusion</h2>
+                <p class="authors">Paulo Guilherme Medeiros Marques (UFC) | Advisor: Windson Viana de Carvalho (UFC); Lincoln Souza Rocha (UFC)</p>
             </div>
             <button id="theme-toggle" class="btn-toggle">🌗 Toggle Theme</button>
         </div>
     </header>
 
     <main class="container">
-        <!-- INTRODUÇÃO -->
+        <section id="abstract" class="card">
+            <h2>Abstract</h2>
+            <p>Program comprehension is a major challenge in software engineering, consuming approximately 58% of developers' time. This difficulty is exacerbated by "Atoms of Confusion" (ACs), specific code microstructures that reliably induce human interpretation errors and are highly prevalent in critical systems. Recent evidence suggests that Large Language Models (LLMs) also exhibit processing uncertainty when encountering ACs, closely mirroring human cognitive struggles. As AI-assisted software development becomes ubiquitous, it is vital to determine whether LLMs can mitigate these semantic traps or if they inadvertently replicate them. This research empirically evaluates the capacity of state-of-the-art LLMs to identify, refactor, and analyze ACs in C and Java source code. Through structured prompt engineering, we assess the models' ability to semantically distinguish confusing code, investigate whether AI-driven verbosity reduction introduces new technical debt, and evaluate their potential to predict underlying logical vulnerabilities within confusion hotspots. The methodology benchmarks LLM performance against traditional static analysis tools and validates AI-refactored code using execution micro-benchmarks. By expanding the theory of ACs into the artificial intelligence domain, this study aims to inform the design of reliable, AI-driven code review tools, ultimately reducing cognitive technical debt and improving the resilience of software infrastructures.</p>
+        </section>
+
         <section id="introduction" class="card">
             <h2>1. Introduction</h2>
             
             <div class="grid-2-col">
                 <div>
-                    <h3>Context & Purpose</h3>
+                    <h3>Context</h3>
                     <ul class="bullet-list">
-                        <li><strong>Program Comprehension:</strong> Consumes ~58% of developers’ time compared to developing new features.</li>
-                        <li><strong>Atoms of Confusion (ACs):</strong> Code microstructures that induce human interpretation errors and heavily propagate in critical modules.</li>
-                        <li><strong>The AI Overlap:</strong> Code regions with ACs cause higher processing uncertainty in LLMs, mirroring human cognitive confusion.</li>
-                        <li><strong>The Gap:</strong> Static tools lack deep semantic analysis. It remains unknown if LLMs accurately capture programmer intent or replicate these cognitive traps.</li>
+                        <li><strong>Program Comprehension</strong> is a central challenge in software engineering, consuming approximately 58% of developers’ time compared to developing new features [3].</li>
+                        <li><strong>Atoms of Confusion (ACs):</strong> are code microstructures that induce human interpretation errors, exhibiting high propagation in critical systems (e.g., 70% in SQLite) [2].</li>
+                        <li>Recent evidence reveals that <strong>code regions with ACs cause higher processing uncertainty in Large Language Models (LLMs)</strong>, correlating directly with human neurophysiological responses associated with confusion in code comprehension tasks [1].</li>
+                        <li>While static analysis tools (e.g., BOHR, Atom Finder) can detect ACs, they lack deep semantic analysis. With the rise of AI-assisted development, it is crucial to determine whether LLMs accurately capture the programmer's intent or if they replicate these same cognitive traps.</li>
                     </ul>
                 </div>
                 <div>
-                    <h3>Research Objectives</h3>
+                    <h3>Objectives</h3>
                     <ul class="bullet-list">
-                        <li><strong>Identify & Refactor:</strong> Evaluate LLMs' efficiency in semantically handling ACs.</li>
-                        <li><strong>Measure Debt:</strong> Investigate if AI optimization introduces new ACs.</li>
-                        <li><strong>Predict Bugs:</strong> Assess LLMs' capability to infer logical vulnerabilities from confusion hotspots.</li>
+                        <li><strong>Identify & Refactor:</strong> Evaluate the efficiency of LLMs in semantically identifying and refactoring ACs.</li>
+                        <li><strong>Measure Debt:</strong> Investigate whether AI optimization or verbosity reduction introduce new ACs.</li>
+                        <li><strong>Predict Bugs:</strong> Assess the capability of LLMs to predict underlying logical bugs and vulnerabilities derived from these confusion hotspots.</li>
                     </ul>
+                </div>
+            </div>
+
+            <div class="mt-2 code-example-section">
+                <h3>What is an Atom of Confusion? (Example)</h3>
+                <p>A classic example of the <strong>Conditional Operator</strong> pattern, which forces the reader to simultaneously evaluate multiple conditions instead of following a clear branching logic:</p>
+                
+                <div class="grid-2-col mt-2">
+                    <div class="code-box">
+                        <h4>❌ Confusing Version (AC)</h4>
+                        <img src="assets/ac_confusing.png" alt="Atom of Confusion" class="result-graph">
+                    </div>
+                    <div class="code-box">
+                        <h4>✅ Refactored Version (Clean)</h4>
+                        <img src="assets/ac_refactored.png" alt="Refactored AC" class="result-graph">
+                    </div>
                 </div>
             </div>
 
@@ -64,7 +80,6 @@
             </div>
         </section>
 
-        <!-- METODOLOGIA -->
         <section id="methodology" class="card">
             <h2>2. Methodology</h2>
             <div class="methodology-steps">
@@ -78,11 +93,11 @@
                 </div>
                 <div class="step">
                     <h4>3. Experimental Execution</h4>
-                    <p>Evaluate LLMs on direct AC classification and vulnerability prediction (RQ1 & RQ3).</p>
+                    <p>Evaluate LLMs on direct AC classification and vulnerability prediction.</p>
                 </div>
                 <div class="step">
                     <h4>4. Empirical Validation</h4>
-                    <p>Execution of micro-benchmarks on AI-refactored code to ensure semantic preservation (RQ2).</p>
+                    <p>Execution of micro-benchmarks on AI-refactored code to ensure semantic preservation.</p>
                 </div>
                 <div class="step">
                     <h4>5. Statistical Analysis</h4>
@@ -91,35 +106,51 @@
             </div>
         </section>
 
-        <!-- RESULTADOS PRELIMINARES -->
         <section id="preliminary-results" class="card">
             <h2>3. Preliminary Results</h2>
             
             <div class="result-item">
                 <h3>Dataset Construction: Android Data Persistence Libraries</h3>
-                <p>Initial data mining focusing on SQLite, Room, Realm, and ObjectBox libraries to establish a baseline of high-density AC hotspots.</p>
-                <!-- INSIRA O LINK DA IMAGEM DO GRÁFICO/RESULTADO AQUI -->
-                <img src="URL_DA_IMAGEM_DATASET.png" alt="Dataset Graph" class="result-graph">
-                <!-- INSIRA O LINK DO REPOSITÓRIO DO GITHUB AQUI -->
-                <a href="URL_DO_SEU_REPOSITORIO_1" class="btn-repo" target="_blank">View Repository</a>
+                <p>This foundational dataset was built for the SBES 2026 paper <em>"Unveiling Confusion in Android Data Persistence Libraries"</em>, establishing the extraction methodology for our LLM evaluations. It investigates the prevalence, evolution, and performance impact of ACs across four major ecosystems: SQLite, Room, Realm, and ObjectBox.</p>
+                
+                <ul class="bullet-list mt-2">
+                    <li><strong>Prevalence (Study 1):</strong> Mapped Java and C/C++ codebases using BOHR and AtomFinder, revealing that modern Java implementations exhibit lower AC propagation (~20%), whereas SQLite's native C core presents widespread contamination (~70% of files).</li>
+                    <li><strong>Evolution (Study 2):</strong> Tracked SQLite stable releases over a decade (2015–2025), demonstrating a strong correlation between codebase growth and the continuous accumulation of ACs.</li>
+                    <li><strong>Performance (Study 3):</strong> Executed controlled C/C++ micro-benchmarks (via Nanobench and Valgrind), indicating that most confusing constructs do not provide significant computational or memory benefits, challenging the assumption that concise code is inherently faster.</li>
+                </ul>
+                <img src="assets/heatmmap_atomos.png" alt="ACs Ocurrence by Library" class="result-graph">
+                <a href="https://github.com/httpaulie/AoC_Android_Persistence_Dataset" class="btn-repo" target="_blank">View Dataset Repository</a>
             </div>
 
             <div class="result-item">
                 <h3>Performance Analysis of ACs in C/C++</h3>
-                <p>Evaluating execution efficiency metrics using Valgrind and Nanobench to correlate cognitive complexity with computational overhead.</p>
-                <!-- INSIRA O LINK DA IMAGEM DO GRÁFICO/RESULTADO AQUI -->
-                <img src="URL_DA_IMAGEM_PERFORMANCE.png" alt="Performance Graph" class="result-graph">
-                <!-- INSIRA O LINK DO REPOSITÓRIO DO GITHUB AQUI -->
-                <a href="URL_DO_SEU_REPOSITORIO_2" class="btn-repo" target="_blank">View Repository</a>
+                <p>This study introduces the <em>Atoms of Confusion Benchmark Suite</em> to answer a fundamental question: does structural confusion in code result in performance penalties for the machine, or is it merely a cognitive burden for the programmer?</p>
+                
+                <ul class="bullet-list mt-2">
+                    <li><strong>Experimental Design:</strong> Evaluated 15 pairs of semantically equivalent C implementations (confusing vs. clean code) compiled under GCC -O0 and -O2 optimization levels.</li>
+                    <li><strong>Memory & Hardware Utilization:</strong> Memory footprint analysis using Valgrind revealed that memory reads, writes, L1 cache misses, and branch counts remained completely invariant across all evaluated patterns.</li>
+                    <li><strong>Execution Time & Efficiency:</strong> CPU profiling via Nanobench showed that all 15 ACs produced statistically significant differences in execution metrics like ns/op and IPC, particularly under -O2 optimization.</li>
+                    <li><strong>The Clarity vs. Efficiency Trade-off:</strong> The assumption that concise, confusing code is inherently faster was refuted. In 8 of the 15 evaluated cases, the refactored clean version performed equally well or better than its confusing counterpart, reinforcing the recommendation for systematic AC removal in most contexts.</li>
+                </ul>
+
+                <img src="assets/heatmap_acs.png" alt="Independent samples Student's t-test results comparing confusing and refactored code versions (p < 0.05). Orange: Confusing version outperformed; Green: Refactored version outperformed; White: No statistical significance." class="result-graph">
+
+                <a href="https://github.com/httpaulie/AoC_Benchmark_C" class="btn-repo" target="_blank">View Benchmark Suite</a>
             </div>
 
             <div class="result-item">
                 <h3>AI-Driven Technical Debt Detection in Java</h3>
-                <p>Adapting AI debt-detection methodologies to specifically target and refactor ACs in Java codebases.</p>
-                <!-- INSIRA O LINK DA IMAGEM DO GRÁFICO/RESULTADO AQUI -->
-                <img src="URL_DA_IMAGEM_DEBT.png" alt="Technical Debt Graph" class="result-graph">
-                <!-- INSIRA O LINK DO REPOSITÓRIO DO GITHUB AQUI -->
-                <a href="URL_DO_SEU_REPOSITORIO_3" class="btn-repo" target="_blank">View Repository</a>
+                <p>This project implements an automated methodology combining static code analysis and Large Language Models (LLMs) to detect Self-Admitted Technical Debt (SATD). This infrastructure serves as the technical foundation for our planned evaluation of Atoms of Confusion (ACs).</p>
+                
+                <ul class="bullet-list mt-2">
+                    <li><strong>AST Parsing:</strong> Utilizes the <code>tree-sitter</code> library to generate abstract syntax trees (AST) of Java files, enabling the precise extraction and contextual mapping of code structures.</li>
+                    <li><strong>LLM Inference:</strong> Integrates the Gemini API via Few-Shot Learning prompts, ensuring the model classifies code based on strict, scientifically accepted taxonomies.</li>
+                    <li><strong>Adaptation for ACs:</strong> The resilient, checkpoint-based pipeline built for SATD classification will be directly adapted to query state-of-the-art LLMs on their ability to semantically identify, refactor, and analyze ACs across large datasets.</li>
+                </ul>
+
+                <img src="assets/3_categorias_satd_apenas.png" alt="LLM Classification Results" class="result-graph">
+                
+                <a href="https://github.com/httpaulie/Detecting_SATD_Java" class="btn-repo" target="_blank">View Detection Tool</a>
             </div>
         </section>
     </main>
@@ -128,15 +159,13 @@
         <div class="container">
             <p><strong>Beyond Human Error</strong> | Poster Presentation at 6th LATAM School</p>
             <p>
-                <!-- INSIRA SEUS LINKS DE CONTATO AQUI -->
-                <a href="URL_DO_SEU_LINKEDIN" target="_blank">LinkedIn</a> | 
-                <a href="URL_DO_SEU_LATTES" target="_blank">Lattes CV</a> | 
-                <a href="mailto:SEU_EMAIL@ufc.br">Contact</a>
+                <a href="https://www.linkedin.com/in/paulo-guilherme-medeiros-marques/" target="_blank">LinkedIn</a> | 
+                <a href="http://lattes.cnpq.br/1199577576352623" target="_blank">Lattes CV</a> | 
+                <a href="mailto:pgmededeiros@gmail.com">Contact</a>
             </p>
         </div>
     </footer>
 
-    <!-- SCRIPT PARA O TOGGLE DE TEMA -->
     <script>
         const toggleBtn = document.getElementById('theme-toggle');
         const body = document.body;

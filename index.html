@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond Human Error - Research Poster</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logos">
+                <!-- INSIRA O LINK DA LOGO DA UFC NO ATRIBUTO SRC ABAIXO -->
+                <img src="URL_DA_LOGO_UFC.png" alt="UFC Logo" class="institution-logo">
+            </div>
+            <div class="title-area">
+                <h1>Beyond Human Error: Evaluating LLM Capabilities in Identifying and Refactoring Atoms of Confusion</h1>
+                <p class="authors">Paulo Guilherme Medeiros Marques | Advisor: Windson Viana de Carvalho</p>
+            </div>
+            <button id="theme-toggle" class="btn-toggle">🌗 Toggle Theme</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- INTRODUÇÃO -->
+        <section id="introduction" class="card">
+            <h2>1. Introduction</h2>
+            
+            <div class="grid-2-col">
+                <div>
+                    <h3>Context & Purpose</h3>
+                    <ul class="bullet-list">
+                        <li><strong>Program Comprehension:</strong> Consumes ~58% of developers’ time compared to developing new features.</li>
+                        <li><strong>Atoms of Confusion (ACs):</strong> Code microstructures that induce human interpretation errors and heavily propagate in critical modules.</li>
+                        <li><strong>The AI Overlap:</strong> Code regions with ACs cause higher processing uncertainty in LLMs, mirroring human cognitive confusion.</li>
+                        <li><strong>The Gap:</strong> Static tools lack deep semantic analysis. It remains unknown if LLMs accurately capture programmer intent or replicate these cognitive traps.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Research Objectives</h3>
+                    <ul class="bullet-list">
+                        <li><strong>Identify & Refactor:</strong> Evaluate LLMs' efficiency in semantically handling ACs.</li>
+                        <li><strong>Measure Debt:</strong> Investigate if AI optimization introduces new ACs.</li>
+                        <li><strong>Predict Bugs:</strong> Assess LLMs' capability to infer logical vulnerabilities from confusion hotspots.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-2">
+                <h3>Research Questions (RQs)</h3>
+                <ul class="bullet-list">
+                    <li><strong>RQ1:</strong> To what extent can LLMs identify ACs and distinguish them from semantically equivalent, clean code?</li>
+                    <li><strong>RQ2:</strong> Do LLMs introduce new ACs when tasked with optimizing, refactoring, or reducing the verbosity of clean code?</li>
+                    <li><strong>RQ3:</strong> Does the presence of ACs help LLMs detect underlying logical flaws in source code?</li>
+                </ul>
+            </div>
+
+            <div class="mt-2">
+                <h3>Expected Results & Impact</h3>
+                <ul class="bullet-list">
+                    <li><strong>Theoretical Impact:</strong> Expands AC theory by demonstrating that these microstructures impair both human and machine code comprehension.</li>
+                    <li><strong>Practical Impact:</strong> Guides the design of context-aware, AI-driven code review tools to help mitigate cognitive technical debt.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- METODOLOGIA -->
+        <section id="methodology" class="card">
+            <h2>2. Methodology</h2>
+            <div class="methodology-steps">
+                <div class="step">
+                    <h4>1. Dataset Construction</h4>
+                    <p>C and Java snippets pre-analyzed by BOHR and AtomFinder.</p>
+                </div>
+                <div class="step">
+                    <h4>2. Prompt Engineering</h4>
+                    <p>Structured prompts tailored for models like GPT, Claude, and Gemini.</p>
+                </div>
+                <div class="step">
+                    <h4>3. Experimental Execution</h4>
+                    <p>Evaluate LLMs on direct AC classification and vulnerability prediction (RQ1 & RQ3).</p>
+                </div>
+                <div class="step">
+                    <h4>4. Empirical Validation</h4>
+                    <p>Execution of micro-benchmarks on AI-refactored code to ensure semantic preservation (RQ2).</p>
+                </div>
+                <div class="step">
+                    <h4>5. Statistical Analysis</h4>
+                    <p>Precision, recall, and hypothesis testing against static tool baselines.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESULTADOS PRELIMINARES -->
+        <section id="preliminary-results" class="card">
+            <h2>3. Preliminary Results</h2>
+            
+            <div class="result-item">
+                <h3>Dataset Construction: Android Data Persistence Libraries</h3>
+                <p>Initial data mining focusing on SQLite, Room, Realm, and ObjectBox libraries to establish a baseline of high-density AC hotspots.</p>
+                <!-- INSIRA O LINK DA IMAGEM DO GRÁFICO/RESULTADO AQUI -->
+                <img src="URL_DA_IMAGEM_DATASET.png" alt="Dataset Graph" class="result-graph">
+                <!-- INSIRA O LINK DO REPOSITÓRIO DO GITHUB AQUI -->
+                <a href="URL_DO_SEU_REPOSITORIO_1" class="btn-repo" target="_blank">View Repository</a>
+            </div>
+
+            <div class="result-item">
+                <h3>Performance Analysis of ACs in C/C++</h3>
+                <p>Evaluating execution efficiency metrics using Valgrind and Nanobench to correlate cognitive complexity with computational overhead.</p>
+                <!-- INSIRA O LINK DA IMAGEM DO GRÁFICO/RESULTADO AQUI -->
+                <img src="URL_DA_IMAGEM_PERFORMANCE.png" alt="Performance Graph" class="result-graph">
+                <!-- INSIRA O LINK DO REPOSITÓRIO DO GITHUB AQUI -->
+                <a href="URL_DO_SEU_REPOSITORIO_2" class="btn-repo" target="_blank">View Repository</a>
+            </div>
+
+            <div class="result-item">
+                <h3>AI-Driven Technical Debt Detection in Java</h3>
+                <p>Adapting AI debt-detection methodologies to specifically target and refactor ACs in Java codebases.</p>
+                <!-- INSIRA O LINK DA IMAGEM DO GRÁFICO/RESULTADO AQUI -->
+                <img src="URL_DA_IMAGEM_DEBT.png" alt="Technical Debt Graph" class="result-graph">
+                <!-- INSIRA O LINK DO REPOSITÓRIO DO GITHUB AQUI -->
+                <a href="URL_DO_SEU_REPOSITORIO_3" class="btn-repo" target="_blank">View Repository</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p><strong>Beyond Human Error</strong> | Poster Presentation at 6th LATAM School</p>
+            <p>
+                <!-- INSIRA SEUS LINKS DE CONTATO AQUI -->
+                <a href="URL_DO_SEU_LINKEDIN" target="_blank">LinkedIn</a> | 
+                <a href="URL_DO_SEU_LATTES" target="_blank">Lattes CV</a> | 
+                <a href="mailto:SEU_EMAIL@ufc.br">Contact</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT PARA O TOGGLE DE TEMA -->
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                toggleBtn.textContent = '☀️ Toggle Theme';
+            } else {
+                toggleBtn.textContent = '🌗 Toggle Theme';
+            }
+        });
+    </script>
+</body>
+</html>

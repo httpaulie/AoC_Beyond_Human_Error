@@ -7,11 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
+<header class="header">
+        <div class="container header-content">
             <div class="title-area">
                 <h1>Beyond Human Error</h1>
                 <h2>Evaluating LLM Capabilities in Identifying and Refactoring Atoms of Confusion</h2>
-                <p class="authors">Paulo Guilherme Medeiros Marques (UFC) | Advisor: Windson Viana de Carvalho (UFC); Lincoln Souza Rocha (UFC)</p>
+                <p class="authors">
+                    <strong>Author:</strong> Paulo Guilherme Medeiros Marques (UFC)<br>
+                    <strong>Advisor:</strong> Windson Viana de Carvalho (UFC)<br>
+                    <strong>Collaborator:</strong> Lincoln Souza Rocha (UFC)
+                </p>
             </div>
             <button id="theme-toggle" class="btn-toggle">🌗 Toggle Theme</button>
         </div>
@@ -122,7 +127,7 @@
                     <li><strong>Performance (Study 3):</strong> Executed controlled C/C++ micro-benchmarks (via Nanobench and Valgrind), indicating that most confusing constructs do not provide significant computational or memory benefits, challenging the assumption that concise code is inherently faster.</li>
                 </ul>
                 <img src="assets/heatmmap_atomos.png" alt="ACs Ocurrence by Library" class="result-graph">
-                <a href="https://github.com/httpaulie/AoC_Android_Persistence_Dataset" class="btn-repo" target="_blank">View Dataset Repository</a>
+                <a href="https://github.com/httpaulie/AoC_Android_Persistence_Dataset" class="btn-repo" target="_blank">View Repository</a>
             </div>
 
             <div class="result-item">
@@ -138,7 +143,7 @@
 
                 <img src="assets/heatmap_acs.png" alt="Independent samples Student's t-test results comparing confusing and refactored code versions (p < 0.05). Orange: Confusing version outperformed; Green: Refactored version outperformed; White: No statistical significance." class="result-graph">
 
-                <a href="https://github.com/httpaulie/AoC_Benchmark_C" class="btn-repo" target="_blank">View Benchmark Suite</a>
+                <a href="https://github.com/httpaulie/AoC_Benchmark_C" class="btn-repo" target="_blank">View Repository</a>
             </div>
 
             <div class="result-item">
@@ -154,7 +159,7 @@
                 <img src="assets/1_satd_vs_nao_satd.png" alt="Detection Results" class="result-graph">
                 <img src="assets/3_categorias_satd_apenas.png" alt="LLM Classification Results" class="result-graph">
                 
-                <a href="https://github.com/httpaulie/Detecting_SATD_Java" class="btn-repo" target="_blank">View Detection Tool</a>
+                <a href="https://github.com/httpaulie/Detecting_SATD_Java" class="btn-repo" target="_blank">View Repository</a>
             </div>
         </section>
 
@@ -162,13 +167,13 @@
             <h2>References</h2>
             <div class="references-list">
                 <p>
-                    <strong>[1]</strong> Abdelsalam et al. 2026. Are Humans and LLMs Confused by the Same Code? An Empirical Study on Fixation-Related Potentials and LLM Perplexity. In Proceedings of the International Conference on Software Engineering (ICSE). ACM.
+                    <strong>[1]</strong> Abdelsalam et al. 2026. Are Humans and LLMs Confused by the Same Code? An Empirical Study on Fixation-Related Potentials and LLM Perplexity. In Proceedings of the International Conference on Software Engineering (ICSE). ACM. <a href="https://www.se.cs.uni-saarland.de/publications/docs/APM+26.pdf" target="_blank">https://www.se.cs.uni-saarland.de/publications/docs/APM+26.pdf</a>
                 </p>
                 <p class="mt-2">
-                    <strong>[2]</strong> Gopstein et al. 2017. Understanding misunderstandings in source code. In Proceedings of the 2017 11th Joint Meeting on Foundations of Software Engineering (Paderborn, Germany) (ESEC/FSE 2017). Association for Computing Machinery, New York, NY, USA, 129–139.
+                    <strong>[2]</strong> Gopstein et al. 2017. Understanding misunderstandings in source code. In Proceedings of the 2017 11th Joint Meeting on Foundations of Software Engineering (Paderborn, Germany) (ESEC/FSE 2017). Association for Computing Machinery, New York, NY, USA, 129–139. <a href="https://doi.org/10.1145/3106237.3106264" target="_blank">doi:10.1145/3106237.3106264</a>
                 </p>
                 <p class="mt-2">
-                    <strong>[3]</strong> Xia et al. 2018. Measuring Program Comprehension: A Large-Scale Field Study with Professionals. IEEE Transactions on Software Engineering 44, 10 (2018), 951–976.
+                    <strong>[3]</strong> Xia et al. 2018. Measuring Program Comprehension: A Large-Scale Field Study with Professionals. IEEE Transactions on Software Engineering 44, 10 (2018), 951–976. <a href="https://doi.org/10.1109/TSE.2017.2734091" target="_blank">doi:10.1109/TSE.2017.2734091</a>
                 </p>
             </div>
         </section>
@@ -176,7 +181,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p><strong>Beyond Human Error: Evaluating LLM Capabilities in Identifying and Refactoring Atoms of Confusion</strong> | Poster Presentation at 6th LATAM School - The Latin American School in Software Engineering. Co-located with CBSOFT, XVI Brazilian Conference on Software: Practice and Theory, September 8th to 11th | São Paulo/SP, Brazil</p>
+            <p><strong>Beyond Human Error: Evaluating LLM Capabilities in Identifying and Refactoring Atoms of Confusion</strong> | 6th LATAM School - The Latin American School in Software Engineering. Co-located with CBSOFT, XVI Brazilian Conference on Software: Practice and Theory, September 8th to 11th | São Paulo/SP, Brazil</p>
             <p>
                 <a href="https://www.linkedin.com/in/paulo-guilherme-medeiros-marques/" target="_blank">LinkedIn</a> | 
                 <a href="http://lattes.cnpq.br/1199577576352623" target="_blank">Lattes</a> | 
